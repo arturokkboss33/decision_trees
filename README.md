@@ -8,7 +8,7 @@ description
 
 This version of binary trees was done completely by the author.
 
-For testing, the dataset in http://archive.ics.uci.edu/ml/datasets/SPECT+Heart was used, as well as simple self-made example.
+For testing, the dataset in http://archive.ics.uci.edu/ml/datasets/SPECT+Heart was used, as well as a simple self-made example.
 
 With the algorithm a 79.7% accuracy is achieved for the mentioned dataset; not far from the 84.0% accuracy achieved by CLIP3 (described in the same URL).
 
