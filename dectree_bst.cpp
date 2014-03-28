@@ -21,9 +21,9 @@
 
 #include "dectree_bst.h"
 
-Dectree_BST::Dectree_BST()
+Dectree_BST::Dectree_BST(dectree_node* rootPtr)
 {
-	root = NULL;
+	root = rootPtr;
 }
 
 //get and set methods

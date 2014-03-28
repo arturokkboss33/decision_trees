@@ -27,7 +27,7 @@ class Dectree_BST
 {
 
 	public:
-		Dectree_BST();
+		Dectree_BST(dectree_node* rootPtr = NULL);
 		//get and set methods
 		dectree_node* get_root();
 		void set_root(dectree_node* rootPtr);
