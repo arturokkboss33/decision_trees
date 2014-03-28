@@ -131,7 +131,7 @@ dectree_node* Dectree_BST::create_node(std::string type, int attribute, int clas
 		ss << "";
 		ss.clear();
 
-		std::cout << "Node split inserted" << std::endl;
+		//std::cout << "Node split inserted" << std::endl;
 	}
 	
 	//if the node is a leaf, an output is stored which contains the 
@@ -148,7 +148,7 @@ dectree_node* Dectree_BST::create_node(std::string type, int attribute, int clas
 		ss << "";
 		ss.clear();
 
-		std::cout << "Node terminal inserted" << std::endl;
+		//std::cout << "Node terminal inserted" << std::endl;
 	}
 	new_node->f = new_node->t = NULL;
 

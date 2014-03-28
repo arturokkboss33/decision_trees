@@ -95,6 +95,8 @@ void Dectree_class::load_trainset(std::string filename)
 		}
 	}
 
+	//set a vector of ints identifying each attribute
+	set_attributes();	
 
 }
 
@@ -104,6 +106,7 @@ void Dectree_class::print_trainset()
 
 	std::vector<char> tmp;
 
+	std::cout << "\nTraining set: " << std::endl;
 	for(std::vector< std::vector<char> >::iterator it = training_set.begin(); it != training_set.end(); ++it)
 	{
 		tmp = *it;
@@ -298,8 +301,8 @@ dectree_node* Dectree_class::learn_dectree(std::vector< std::vector<char> > p_ex
 	//for each of the classes of the attribute and the set
 	//of examples created
 	atr.erase(atr.begin()+best_atr.at(1));
-	(dectree.get_root())->f = learn_dectree(ex,new_ex1,atr);	
-	(dectree.get_root())->t = learn_dectree(ex,new_ex2,atr);
+	(dectree_root)->f = learn_dectree(ex,new_ex1,atr);	
+	(dectree_root)->t = learn_dectree(ex,new_ex2,atr);
 
 	//std::cout << "Learning done" << std::endl;
 
@@ -327,7 +330,7 @@ double Dectree_class::hcompute(std::vector< std::vector<char> > ex)
 	}
 	tmp.clear();
 
-	/* 
+	/*
 	//Debugging print functions, uncomment if necessary
 	std::cout << std::endl;
 	std::cout << "Positive and negative counts" << std::endl;
@@ -411,13 +414,13 @@ std::vector<int> Dectree_class::max_gain_atr(std::vector<int> atr, std::vector< 
 			h1 *= (double)(atr_class1.at(0)+atr_class1.at(1))/ex.size();
 		}
 		p_pos = (double)atr_class2.at(1)/(atr_class2.at(0)+atr_class2.at(1));
-		std::cout << "ñññ " << p_pos << std::endl;
+		//std::cout << "ñññ " << p_pos << std::endl;
 		if(p_pos == 0 || p_pos == 1)
 			h2 = 0;
 		else
 		{
 			h2 = -1*(p_pos*log2(p_pos)+(1-p_pos)*log2(1-p_pos));
-			std::cout << "ñññ " << h2 << std::endl;
+			//std::cout << "ñññ " << h2 << std::endl;
 			h2 *= (double)(atr_class2.at(0)+atr_class2.at(1))/ex.size();
 		}
 		//info gain
