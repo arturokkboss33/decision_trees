@@ -2,8 +2,9 @@
 /* --- DECISION TREES-BINARY TREE SEARCH CLASS HEADER   FILE ---*/
 /* FILENAME: dectree_bst.cpp 
  *
- * DESCRIPTION: source file for the struct object for a node
- * in a binary search algorithm.
+ * DESCRIPTION: header file for the struct object of a binary
+ * search tree, modified for its use in a decision tree 
+ * learning algorithm.
  *
  * VERSION: 1.0
  *

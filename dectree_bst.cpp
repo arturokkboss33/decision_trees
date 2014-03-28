@@ -1,20 +1,21 @@
-/*
- * =i====================================================================================
+/* =============================================================*/
+/* --- DECISION TREES - BINARY TREE NODE  SOURCE FILE        ---*/
+/* FILENAME: dectree_node.h 
  *
- *       Filename:  bst.cpp
+ * DESCRIPTION: source file for the struct object of a binary
+ * search tree, modified for its use in a decision tree 
+ * learning algorithm. 
  *
- *    Description:  
+ * VERSION: 1.0
  *
- *        Version:  1.0
- *        Created:  03/15/2014 07:14:38 PM
- *       Revision:  none
- *       Compiler:  gcc
+ * CREATED: 03/16/2013
  *
- *         Author:  YOUR NAME (), 
- *   Organization:  
- *i
- * =====================================================================================
- */
+ * COMPILER: g++
+ *
+ * AUTHOR: ARTURO GOMEZ CHAVEZ
+ * ALIAS: BOSSLEGEND33
+ * 
+ * ============================================================ */
 
 #include <iostream>
 #include <sstream>

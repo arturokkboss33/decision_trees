@@ -2,8 +2,8 @@
 /* --- DECISION TREES - BINARY TREE NODE  HEADER FILE        ---*/
 /* FILENAME: dectree_node.h 
  *
- * DESCRIPTION: header file for the struct object for a node
- * in a binary search tree for decision tree usage. 
+ * DESCRIPTION: header file for the struct object of a node
+ * in a binary search tree (decision tree). 
  *
  * VERSION: 1.0
  *

@@ -1,20 +1,20 @@
-/*
- * =====================================================================================
+/* =============================================================*/
+/* --- DECISION TREES- DECISION TREE CLASS SOURCE FILE       ---*/
+/* FILENAME: dectree_class.cpp 
  *
- *       Filename:  dectree_class.cpp
+ * DESCRIPTION: source file for the struct object which implements
+ * a decision tree learning algorithm.
  *
- *    Description:  
+ * VERSION: 1.0
  *
- *        Version:  1.0
- *        Created:  03/18/2014 08:50:55 AM
- *       Revision:  none
- *       Compiler:  gcc
+ * CREATED: 03/18/2013
  *
- *         Author:  YOUR NAME (), 
- *   Organization:  
+ * COMPILER: g++
  *
- * =====================================================================================
- */
+ * AUTHOR: ARTURO GOMEZ CHAVEZ
+ * ALIAS: BOSSLEGEND33
+ * 
+ * ============================================================ */
 
 #include "dectree_class.h"
 
