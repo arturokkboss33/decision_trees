@@ -28,12 +28,22 @@ class Dectree_BST
 
 	public:
 		Dectree_BST();
-		dectree_node* root;
-		void insert_node(dectree_node** , std::string, int, int); 
-		bool search_node(dectree_node*, int);
-		void postOrder(dectree_node*);
+		//get and set methods
+		dectree_node* get_root();
+		void set_root(dectree_node* rootPtr);
+		//insert a node based and complete its fields
+		//based on it's type: terminal or splitting
+		void insert_node(dectree_node** rootPtr, std::string type, int attribute, int classification); 
+		//search based on attribute id
+		bool search_node(dectree_node* root, int attribute_id);
+		//common methods to traverse a binary tree
+		void inOrder(dectree_node* root);
+		void postOrder(dectree_node* root);
 
 	private:
+		//member data
+		dectree_node* root;
+		//auxiliary method to insert a node
 		dectree_node* create_node(std::string, int, int);
 };
 
