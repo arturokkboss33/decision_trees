@@ -38,11 +38,11 @@ int main ( int argc, char *argv[] )
 	
 	//Load training set
 	dectree.load_trainset(train_file);
-	dectree.print_trainset();
+	//dectree.print_trainset();
 	//Compute entropy of overall classification
 	dectree.set_hgoal();
 	hgoal = dectree.get_hgoal();
-	std::cout << "\nGoal entropy: " << hgoal << std::endl;
+	//std::cout << "\nGoal entropy: " << hgoal << std::endl;
 	//Build decision tree from the examples	
 	dectree.set_dectree();
 	dbst.set_root(dectree.get_dectree());
@@ -58,12 +58,14 @@ int main ( int argc, char *argv[] )
 	//print results
 	results = dectree.test_cases(test_file);
 	std::cout << "\n \% error: " << dectree.get_per_error() << std::endl;
+	/*//for debugging
 	std::cout << "\nTruth table for every test case" << std::endl;
 	for(std::vector<bool>::iterator it = results.begin(); it != results.end(); ++it)
 	{
 		std::cout << *it << " ";
 	}
 	std::cout << std::endl;
+	*/
 
 	return 0;
 }				/* ----------  end of function main  ---------- */

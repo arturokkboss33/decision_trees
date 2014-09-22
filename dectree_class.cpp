@@ -25,6 +25,7 @@
 #include <math.h>
 #include <stdlib.h>
 #include <time.h>
+#include <float.h>
 
 //can make a initializer list for a default constructor, but this
 //gives the possibility to the client to change these default
@@ -405,27 +406,33 @@ std::vector<int> Dectree_class::max_gain_atr(std::vector<int> atr, std::vector< 
 		//compoute entropy and information gain
 		//be careful to consider the limit values of the math fcns
 		p_pos = (double)atr_class1.at(1)/(atr_class1.at(0)+atr_class1.at(1));
+		//std::cout << "+++ " << p_pos;
 		
-		if(p_pos == 0 || p_pos == 1)
-			h1 = 0;
-		else
-		{
-			h1 = -1*(p_pos*log2(p_pos)+(1-p_pos)*log2(1-p_pos));
-			h1 *= (double)(atr_class1.at(0)+atr_class1.at(1))/ex.size();
-		}
+		if( (atr_class1.at(0)+atr_class1.at(1)) > 0 ) //to avoid NaN values
+		{ 
+			if(fabs(p_pos-0.) <= FLT_EPSILON || fabs(p_pos-1.) <= FLT_EPSILON)
+				h1 = 0;
+			else
+			{
+				h1 = -1*(p_pos*log2(p_pos)+(1-p_pos)*log2(1-p_pos));
+				h1 *= (double)(atr_class1.at(0)+atr_class1.at(1))/ex.size();
+			}
+		}else{h1 = 0;}
+
 		p_pos = (double)atr_class2.at(1)/(atr_class2.at(0)+atr_class2.at(1));
-		//std::cout << "ñññ " << p_pos << std::endl;
-		if(p_pos == 0 || p_pos == 1)
-			h2 = 0;
-		else
+
+		if( (atr_class2.at(0)+atr_class2.at(1)) > 0 ) //to avoid NaN values
 		{
-			h2 = -1*(p_pos*log2(p_pos)+(1-p_pos)*log2(1-p_pos));
-			//std::cout << "ñññ " << h2 << std::endl;
-			h2 *= (double)(atr_class2.at(0)+atr_class2.at(1))/ex.size();
-		}
+			if(fabs(p_pos-0.) <= FLT_EPSILON || fabs(p_pos-1.) <= FLT_EPSILON)
+				h2 = 0;
+			else
+			{
+				h2 = -1*(p_pos*log2(p_pos)+(1-p_pos)*log2(1-p_pos));
+				h2 *= (double)(atr_class2.at(0)+atr_class2.at(1))/ex.size();
+			}
+		}else{h2 = 0;}
 		//info gain
 		atr_info_gain = h_bef_split - (h1+h2);
-
 		/* 
 		//Debugging print functions, uncomment if necessary
 		std::cout << "h1: " << h1 << std::endl;
@@ -450,7 +457,6 @@ std::vector<int> Dectree_class::max_gain_atr(std::vector<int> atr, std::vector< 
 		atr_class1.assign(2,0);
 		atr_class2.assign(2,0);
 	}
-
 	//return the best atr and its position in the list
 	best_atr_info.push_back(best_atr);
 	best_atr_info.push_back(best_atr_pos);
